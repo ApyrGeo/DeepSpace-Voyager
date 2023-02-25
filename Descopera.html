@@ -206,14 +206,14 @@
 		</header>
 		<section>
 			<img src="stars.png" id="stars">
-			<h2 id="intrebare" class="intrebari">Mai întâi, vrem sa știm mai multe despre tine...</h2>
+			<h2 id="intrebare" class="intrebari">Mai întâi, vrem să știm mai multe despre tine...</h2>
 			<img src="robot.gif" id="robot">
 			
 			<div class="select">
 				<select style="display:none" id="buget" onchange="hideAndShowSelectBox()" class="buget" >
 					<option value="">--Alege--</option>
-					<option value="Mare">Peste 1500 M$</option>
-					<option value="Mic">Sub 1500 M$</option>
+					<option value="Mare" id="mare">Peste 1.500 M$</option>
+					<option value="Mic" id="mic">Sub 1.500 M$</option>
 					<option value="Variabil">Variabil</option>
 				</select>
 			
@@ -257,12 +257,18 @@
 				var buget = document.getElementById("buget").value;
 			
 				var sugestii = [];
+				
 			{
 			if(buget==="Variabil")
 			{
 				var x=Math.floor(Math.random()*2);
 				if(x==0)	buget="Mare";
 				if(x==1)	buget="Mic";
+			}
+			if(tip==="Calatorii intergalactice")
+			{
+				document.getElementById("mare").innerText="Peste 10.000 M$";
+				document.getElementById("mic").innerText="Sub 10.000 M$";
 			}
 			if(buget==="Mare")
 			{
@@ -511,6 +517,7 @@
 				}
 				if(tip==="Calatorii intergalactice")
 				{
+					
 					if(interes==="Sejur")
 					{
 						var x=Math.floor(Math.random()*2);
@@ -1245,48 +1252,48 @@
 			function pozeRezultat()
 			{
 			
-			const track= document.getElementById("image-track");
+				const track= document.getElementById("image-track");
 			
-			window.onmouseup = () =>
-			{
-				track.dataset.mouseDownAt = "0";
-				track.dataset.prevPercentage = track.dataset.percentage;
-			}
-			
-			window.onmousedown = e =>
-			{
-				track.dataset.mouseDownAt= e.clientX;
-			}
-			
-			window.onmousemove = e =>
-			{
-				if(track.dataset.mouseDownAt === "0") return;
-				
-				const mouseDelta= parseFloat(track.dataset.mouseDownAt) -e.clientX,
-						maxDelta= window.innerWidth /2;
-						
-				const percentage =(mouseDelta/ maxDelta) * -100,
-					nextPercentageUnconstrained =parseFloat(track.dataset.prevPercentage)+ percentage;
-					nextPercentage= Math.max(Math.min(nextPercentageUnconstrained, 0),-100);
-				
-				for(const image of track.getElementsByClassName("image"))
+				function handleOnUp()
 				{
-					image.animate(
-						{objectPosition: `${100 + nextPercentage}% center`},
+					track.dataset.mouseDownAt = "0";
+					track.dataset.prevPercentage = track.dataset.percentage;
+				}
+			
+				function handleOnDown(e)
+				{
+					track.dataset.mouseDownAt= e.clientX;
+				}
+			
+				function handleOnMove(e)
+				{
+					if(track.dataset.mouseDownAt === "0") return;
+				
+					const mouseDelta= parseFloat(track.dataset.mouseDownAt) -e.clientX,
+							maxDelta= window.innerWidth /2;
+						
+					const percentage =(mouseDelta/ maxDelta) * -100,
+						nextPercentageUnconstrained =parseFloat(track.dataset.prevPercentage)+ percentage;
+						nextPercentage= Math.max(Math.min(nextPercentageUnconstrained, 0),-100);
+				
+					for(const image of track.getElementsByClassName("image"))
+					{
+						image.animate(
+							{objectPosition: `${100 + nextPercentage}% center`},
+							{ duration: 1200, fill: "forwards" }
+						);
+					}
+				
+					track.dataset.percentage = nextPercentage;
+				
+					track.animate
+					(
+						{transform: `translate(${nextPercentage}%, -50%)`},
 						{ duration: 1200, fill: "forwards" }
 					);
-				}
-				
-				track.dataset.percentage = nextPercentage;
-				
-				track.animate
-				(
-					{transform: `translate(${nextPercentage}%, -50%)`},
-					{ duration: 1200, fill: "forwards" }
-				);
 	
 			}
-			/*
+			
 				window.onmousedown = e => handleOnDown(e);
 
 				window.ontouchstart = e => handleOnDown(e.touches[0]);
@@ -1298,7 +1305,7 @@
 				window.onmousemove = e => handleOnMove(e);
 
 				window.ontouchmove = e => handleOnMove(e.touches[0]);
-			*/
+			
 			}				
 			
 		</script>
