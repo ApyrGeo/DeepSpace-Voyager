@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DeepSpace Voyager</title>
+		
+	</head>
+	<style>
+	
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-size: border-box;
+			font-family: sans-serif;
+			scroll-behavior: smooth;
+		}
+		body
+		{
+			min-height: 100vh;
+			overflow-x:  hidden;
+			background: linear-gradient(#2b1055,#7597de);
+		}
+		header
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 10000;
+		}
+		header .logo
+		{
+			color: #fff;
+			font-weight: 700;
+			text-decoration: none;
+			font-size: 2em;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		header ul
+		{
+			padding-right:50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		header ul li
+		{
+			List-style: none;
+			margin-left: 20px;
+		}
+		header ul li a
+		{
+			text-decoration: none;
+			padding: 6px 15px;
+			color: #fff;
+			border-radius: 20px;
+		}
+		header ul li a:hover,
+		header ul li a.active
+		{
+			background: #fff;
+			color: #2d1055;
+		}
+		section
+		{
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(to top, #1c0522, transparent);
+			z-index=1000;
+			overflow: hidden;
+		}
+		section::before
+		{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width 100%;
+			height: 100px;
+		}
+		section img
+		{		
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			pointer-events: none;
+		}
+		section img#moon
+		{
+			mix-blend-mode: screen;
+			align-items: center;
+		}
+		section img#front
+		{
+			
+			z-index: 10;
+		}
+		#text
+		{
+			position: absolute;
+			right: -350px;
+			color: #fff;
+			white-space: nowrap;
+			//font-size: 1.5em;
+			font-size: 4.5vw;
+			z-index: 9;
+			
+		}
+		#btn
+		{
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 30px;
+			border-radius: 40px;
+			background: #fff;
+			color: #2b1055;
+			font-size: 1.5em;
+			z-index: 9;
+			transform: translateY(100px);
+		}
+		.sec #btn1
+		{
+			
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 30px;
+			border-radius: 40px;
+			background: #fff;
+			color: #2b1055;
+			font-size: 1.5em;
+			transform: translateY(100px);
+		}
+		.sec
+		{
+			
+			text-align: justify;
+			position: relative;
+			padding: 100px 200px 300px 200px;
+			background: #1c0522;
+		}
+		.sec h2
+		{
+			font-size: 3.5em;
+			margin-bottom: 10px;
+			color: #fff;
+		}
+		.sec p
+		{	
+			font-size: 1.5em;
+			color: #fff;
+		}
+		
+	</style>
+	<body>
+		<header>
+			<a href="#" class="logo" onclick="window.location.replace('index.html')">DeepSpace Voyager</a>
+			<ul>
+				<li><a href="#" class="active">Acasă</a></li>
+				<li><a href="#" onclick="window.location.replace('Descopera.html')";>Descoperă</a></li>
+				<li><a href="#" onclick="window.location.replace('Despre.html')">Despre</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</header>
+		<section>
+			<img src="stars.png" id="stars">
+			<img src="moon.png" id="moon">
+			<img src="mountains_behind.png" id="munti">
+			<h2 id="text">Un nou tip de călătorii</h2>
+			<a href="#sec" id="btn">Explorează</a>
+			<img src="mountains_front.png" id="front">
+		</section>
+		<div class="sec" id="sec">
+			<h2>Cum funcționează?</h2>
+			<br><br>
+			<br><br>
+			<p>Bine ați venit pe site-ul nostru de expediție spațială personalizată! Aici vă oferim o experiență unică în care puteți să vă proiectați propria expediție spațială, bazată pe preferințele și dorințele personale.
+			<br><br>
+			La începutul călătoriei, veți fi întâmpinat de un asistent virtual inteligent, care va lucra cu dumneavoastră pentru a determina destinațiile și activitățile preferate. În funcție de preferințele dumneavoastră, vă vom crea o expediție spațială personalizată care să includă atât explorarea planetelor și a stelelor, cât și activități specifice spațiului, cum ar fi alergarea pe peretele spațial, plutirea în gravitație zero și multe altele.
+			<br><br>
+			Site-ul nostru utilizează cele mai recente tehnologii în domeniul inteligenței artificiale și machine learning pentru a vă oferi sugestii personalizate de destinații și activități, bazate pe preferințele și istoricul dumneavoastră de călătorie.
+			<br><br>
+			În plus, oferim și o varietate de opțiuni de transport spațial, inclusiv nave spațiale de lux și vehicule personale, astfel încât să puteți alege o experiență care să se potrivească bugetului și preferințelor dumneavoastră. Vă vom ajuta să faceți rezervări la cele mai bune hoteluri spațiale și să planificați itinerariul dumneavoastră astfel încât să vă puteți concentra asupra aventurii dumneavoastră spațiale.
+			<br><br>
+			La sfârșitul călătoriei, veți primi o amintire personalizată, cum ar fi o hartă a sistemului solar cu marcajele dumneavoastră, sau o fotografie personalizată de pe o planetă îndepărtată, pentru a vă aminti întotdeauna de această experiență unică.
+			<br><br>
+			Indiferent de dorințele dumneavoastră, suntem aici pentru a vă ajuta să creați expediția spațială personalizată a viselor dumneavoastră. Vă invităm să începeți călătoria acum și să experimentați frumusețea și misterul spațiului cosmic!
+			</p>
+		
+			<a href="#" id="btn1" onclick="window.location.replace('Descopera.html')">Începe</a>
+		</div>
+		
+		
+		
+		<script>
+			let stars = document.getElementById('stars');
+			let moon = document.getElementById('moon');
+			let munti = document.getElementById('munti');
+			let front = document.getElementById('front');
+			let btn = document.getElementById('btn');
+			let text = document.getElementById('text');
+			let header= document.querySelector('header');
+			
+			window.addEventListener('scroll',function(){
+				let value=window.scrollY;
+				stars.style.left = value * 0.25 + 'px';
+				moon.style.top = value * 1 + 'px';
+				munti.style.top = value * 0.5 + 'px';
+				front.style.top = value * 0 + 'px';
+				text.style.marginRight =  value * 4 + 'px';
+				text.style.marginTop =  value * 1.5 + 'px';
+				btn.style.marginTop =  value * 1.5 + 'px';
+				header.style.top= value * 0.5 + 'px';
+			})
+		</script>
+	</body>
+</html>

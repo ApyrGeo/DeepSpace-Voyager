@@ -1,0 +1,1306 @@
+<head>
+	<title>DeepSpace Voyager</title>
+</head>
+<style>
+	
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-size: border-box;
+			font-family: sans-serif;
+			scroll-behavior: smooth;
+		}
+		body
+		{
+			min-height: 100vh;
+			overflow-x:  hidden;
+			//overflow-y:  scroll;
+			background:  linear-gradient(#2b1055,#7597de);
+		}
+		header
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 10000;
+		}
+		header .logo
+		{
+			color: #fff;
+			font-weight: 700;
+			text-decoration: none;
+			font-size: 2em;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		header ul
+		{
+			padding-right:50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		header ul li
+		{
+			List-style: none;
+			margin-left: 20px;
+		}
+		header ul li a
+		{
+			text-decoration: none;
+			padding: 6px 15px;
+			color: #fff;
+			border-radius: 20px;
+		}
+		header ul li a:hover,
+		header ul li a.active
+		{
+			background: #fff;
+			color: #2d1055;
+		}	
+		section
+		{
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			
+			background: linear-gradient(to top, #1c0522, transparent);
+			z-index=1000;
+			overflow: hidden;
+		}
+		section img#stars
+		{	
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		section img#mesaj
+		{		
+			position: absolute;
+			padding:100px 0 0 15%;
+			align-items:left;
+			width: 500px;
+			height: 250px;
+		}
+		section img#robot
+		{	
+			position: absolute;
+			padding:400px 0 0 20%;
+		}
+		section div
+		{
+			position: absolute;
+			margin-top: 3000px;
+		}
+		section div.select
+		{
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin:400px 0 0 0;
+			flex-direction: column;
+			width:100%;
+		}
+		section div select
+		{
+			font-size: 1.7em;
+		}
+		.intrebari
+		{	
+			color: #fff;
+			position: absolute;
+			
+			font-size: 2.5em;
+			margin-top:300px;
+			text-align: center;
+			width: 100%;
+		}
+		.tip
+		{
+			
+		}
+		.interes
+		{
+			
+		}
+		.buget
+		{	
+		
+		}
+		h2
+		{
+			color:white;
+			font-size: 5rem;
+			font-family: "Space Mono", monospace;
+		}
+		.rezultat
+		{
+			height:90%;
+			width:100%;
+		}
+		.rezultat h1
+		{
+			font-size: 3em;
+			color:white;
+			text-align: center;
+		}
+		.rezultat h3
+		{	
+			font-size: 1.5em;
+			color:white;
+			text-align: justified;
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-top: 100px;
+		}
+		#image-track
+		{
+			display: flex;
+			gap: 4vmin;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(0%, -50%);
+			user-select: none;
+		}
+		#image-track >.image
+		{	
+			
+			width: 35vmin;
+			height: 46vmin;
+			object-fit: cover;
+			object-position: 100% center;
+		}
+		.rezultat #image-track
+		{	
+			margin-top: 200px;
+			//width: 40vmin;
+			//height: 56vmin;
+			//object-fit: cover;
+			//object-position: center;
+		}
+		
+		
+</style>
+<html>	
+	<body>
+		<header>
+			<a href="#" class="logo" onclick="window.location.replace('index.html')">DeepSpace Voyager</a>
+			<ul>
+				<li><a href="#" onclick="window.location.replace('index.html')">Acasă</a></li>
+				<li><a href="#" onclick="window.location.replace('Descopera.html')" class="active">Descoperă</a></li>
+				<li><a href="#" onclick="window.location.replace('Despre.html')">Despre</a></li>
+				<li><a href="#" >Contact</a></li>
+			</ul>
+		</header>
+		<section>
+			<img src="stars.png" id="stars">
+			<h2 id="intrebare" class="intrebari">Mai întâi, vrem sa știm mai multe despre tine...</h2>
+			<img src="robot.gif" id="robot">
+			
+			<div class="select">
+				<select style="display:none" id="buget" onchange="hideAndShowSelectBox()" class="buget" >
+					<option value="">--Alege--</option>
+					<option value="Mare">Peste 1500 M$</option>
+					<option value="Mic">Sub 1500 M$</option>
+					<option value="Variabil">Variabil</option>
+				</select>
+			
+				<select style="display:none" id="interes" onchange="hideAndShowSelectBox()" class="interes" >
+					<option value="">--Alege--</option>
+					<option value="Sejur">Sejur la un Hotel Spațial</option>
+					<option value="Business">Business</option>
+					<option value="Tur">Tur în jurul unor obiective spațiale</option>
+					<option value="Cercetare">Cercetare</option>
+					<option value="Interrelationare">Interrelaționare cu alte entități</option>
+					
+				</select>
+			
+				<select style="display:none" id="tip" onchange="hideAndShowSelectBox()" class="tip">
+					<option value="">--Alege--</option>
+					<option value="Turism pe alte planete">Turism în Sistemul nostru Solar</option>
+					<option value="Calatorii intergalactice">Călătorii Intergalactice</option>
+				</select>
+			</div>
+			<div class="rezultat" id="rezultat">
+				
+			</div>
+			
+		</section>
+		
+		
+		
+		
+		
+		
+		
+		<script>
+			
+			
+			function AfisareRezultat()
+			{
+				
+				var ok=1;
+				var tip=document.getElementById("tip").value;
+				var interes = document.getElementById("interes").value;
+				var buget = document.getElementById("buget").value;
+			
+				var sugestii = [];
+			{
+			if(buget==="Variabil")
+			{
+				var x=Math.floor(Math.random()*2);
+				if(x==0)	buget="Mare";
+				if(x==1)	buget="Mic";
+			}
+			if(buget==="Mare")
+			{
+				if(tip==="Turism pe alte planete")
+				{
+					if(interes==="Sejur")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push
+							({
+							nume:'Sejur la "Sunwave Space Resort"',
+							imagine:"imagini/111_0.jpg",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111_1.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111_2.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111_3.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111_4.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111_5.jpg"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'Sejur la "Cosmic Oasis Spa Resort"',
+							imagine:"imagini/111s_0.jpg",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111s_1.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111s_2.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111s_3.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111s_4.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/111s_0.jpg"
+							});
+						}
+					}
+					if(interes==="Business")
+					{
+						sugestii.push({
+							nume:'Centrul Comercial "Mars United"',
+							imagine:"imagini/112_0.jpg",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/112_1.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/112_2.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/112_3.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/112_4.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/112_0.jpg"
+							});
+							
+					}
+					if(interes==="Tur")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Tur în jurul Sistemului Solar',
+							imagine:"imagini/114_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114_0.png"
+							});
+						}
+						if(x==1)
+						{	
+							sugestii.push({
+							nume:'Tur în jurul Planetei Saturn',
+							imagine:"imagini/114s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/114s_0.png"
+							});
+						}
+						
+					}
+					if(interes==="Cercetare")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'"Cosmic Solar Observatory"',
+							imagine:"imagini/113_0.jpg",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113_1.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113_2.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113_3.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113_4.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113_5.jpg"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'"Cosmic Mars Observatories"',
+							imagine:"imagini/113s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/113s_0.png"
+							});
+						}
+					}
+					if(interes==="Interrelationare")
+					{
+						sugestii.push({
+							nume:'Schimb de experiență cu marțienii',
+							imagine:"imagini/115_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/115_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/115_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/115_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/115_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/115_5.png"
+							});
+							
+					}
+				}
+				if(tip==="Calatorii intergalactice")
+				{
+					if(interes==="Sejur")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Sejur la "Milky Way Hotel"',
+							imagine:"imagini/121_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121_5.png"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'Sejur la "Andromeda Spa Center"',
+							imagine:"imagini/121s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/121s_5.png"
+							});
+						}
+					}
+					if(interes==="Business")
+					{
+						sugestii.push({
+						nume:'Milky Way Peta Center',
+						imagine:"imagini/122_0.png",
+						descriere:""
+						});
+						sugestii.push
+						({
+						imagine:"imagini/122_1.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/122_2.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/122_3.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/122_4.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/122_5.png"
+						});
+					}
+					if(interes==="Tur")
+					{
+						sugestii.push({
+						nume:'Turul Galaxiei Calea Lactee',
+						imagine:"imagini/123_0.png",
+						descriere:""
+						});
+						sugestii.push
+						({
+						imagine:"imagini/123_1.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/123_2.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/123_3.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/123_4.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/123_5.png"
+						});
+					}
+					if(interes==="Cercetare")
+					{
+						sugestii.push({
+							nume:'"Milky Way" International Research Centre',
+							imagine:"imagini/124_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/124_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/124_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/124_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/124_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/124_5.png"
+							});
+					}
+					if(interes==="Interrelationare")
+					{
+						var x=Math.floor(Math.random()*2);
+						sugestii.push({
+						nume:'Schimb de experiență cu alte ființe pe "Universe Main Hub"',
+						imagine:"imagini/125_0.png",
+						descriere:""
+						});
+						sugestii.push
+						({
+						imagine:"imagini/125_1.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/125_2.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/125_3.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/125_4.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/125_0.png"
+						});
+					}
+				
+				}
+			}
+			if(buget==="Mic")
+			{
+				if(tip==="Turism pe alte planete")
+				{
+					if(interes==="Sejur")
+					{
+						sugestii.push({
+							nume:'Sejur la "Happy Earth Resort"',
+							imagine:"imagini/211_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/211_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/211_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/211_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/211_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/211_0.png"
+							});
+							
+					}
+					if(interes==="Business")
+					{
+						sugestii.push({
+							nume:'Stația spațială "Outer-Space Businesses United"',
+							imagine:"imagini/212_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/212_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/212_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/212_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/212_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/212_5.png"
+							});
+					}
+					if(interes==="Tur")
+					{
+						var x= Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Tur în jurul Lunii și a Pământului',
+							imagine:"imagini/213_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213_0.png"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'Tur în jurul Soarelui',
+							imagine:"imagini/213s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/213s_5.png"
+							});
+						}
+					}
+					if(interes==="Cercetare")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'"Cosmic Lunar Observatory"',
+							imagine:"imagini/214_0.jpg",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214_1.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214_2.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214_3.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214_4.jpg"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214_5.jpg"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'International Space Station X',
+							imagine:"imagini/214s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/214s_5.png"
+							});
+						}
+					}
+					if(interes==="Interrelationare")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Schimb de experiențe cu extratereștrii călători pe Lună',
+							imagine:"imagini/215_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215_5.png"
+							});
+						}
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Schimb de experiențe cu extratereștrii staționați pe orbita Pământului',
+							imagine:"imagini/215s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/215s_5.png"
+							});
+						}
+					}
+				}
+				if(tip==="Calatorii intergalactice")
+				{
+					if(interes==="Sejur")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Sejur la "Centauri Resort"',
+							imagine:"imagini/221_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221_5.png"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'Sejur la "Ͳ Ceti Hotel"',
+							imagine:"imagini/221s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/221s_5.png"
+							});
+						}
+					}
+					if(interes==="Business")
+					{
+						sugestii.push({
+						nume:'Centrul comercial "Proxima Centauri"',
+						imagine:"imagini/222_0.png",
+						descriere:""
+						});
+						sugestii.push
+						({
+						imagine:"imagini/222_1.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/222_2.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/222_3.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/222_4.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/222_5.png"
+						});
+					}
+					if(interes==="Tur")
+					{
+						sugestii.push({
+						nume:'Turul Sistemului Proxima Centauri',
+						imagine:"imagini/223_0.png",
+						descriere:""
+						});
+						sugestii.push
+						({
+						imagine:"imagini/223_1.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/223_2.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/223_3.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/223_4.png"
+						});
+						sugestii.push
+						({
+						imagine:"imagini/223_0.png"
+						});
+					}
+					if(interes==="Cercetare")
+					{
+						sugestii.push({
+							nume:'"Centauri" International Research Centre',
+							imagine:"imagini/224_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/224_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/224_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/224_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/224_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/224_5.png"
+							});
+					}
+					if(interes==="Interrelationare")
+					{
+						var x=Math.floor(Math.random()*2);
+						if(x==0)
+						{
+							sugestii.push({
+							nume:'Schimb de experiență cu locuitorii planetei β',
+							imagine:"imagini/225_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225_5.png"
+							});
+						}
+						if(x==1)
+						{
+							sugestii.push({
+							nume:'Schimb de experiență cu locuitorii planetei Γ',
+							imagine:"imagini/225s_0.png",
+							descriere:""
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225s_1.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225s_2.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225s_3.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225s_4.png"
+							});
+							sugestii.push
+							({
+							imagine:"imagini/225s_0.png"
+							});
+						}
+					}
+				}
+				
+			}
+			}	
+			if(ok)
+				{	
+					let rezultat=document.getElementById("rezultat");
+	
+						rezultat.innerHTML =
+							"<h1>" + sugestii[0].nume + "</h1>"+
+							
+							'<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">'
+								+'<img class="image" src="'+sugestii[0].imagine+'" draggable="false" />'
+								+'<img class="image" src="'+sugestii[1].imagine+'" draggable="false" />'
+								+'<img class="image" src="'+sugestii[2].imagine+'" draggable="false" />'
+								+'<img class="image" src="'+sugestii[3].imagine+'" draggable="false" />'
+								+'<img class="image" src="'+sugestii[4].imagine+'" draggable="false" />'
+								+'<img class="image" src="'+sugestii[5].imagine+'" draggable="false" />'
+							+"</div>"
+							+"<h3>"+sugestii[0].descriere+"</h3>";
+						
+					pozeRezultat();
+					rezultat.scrollIntoView(true);
+					
+				}
+			}
+		
+			effect();
+			function urmintrebare1()
+			{
+				document.getElementById("intrebare").innerHTML = "Ce tip de călătorie ți-ar plăcea cel mai mult?";
+				let element=document.getElementById("tip");
+				
+				element.style.display="";
+				
+				effect();
+			}
+			function urmintrebare2()
+			{
+				document.getElementById("intrebare").innerHTML = "Care este scopul călătoriei?";
+				let element=document.getElementById("interes");
+				element.style.display="";
+				
+				effect();
+			}
+			function urmintrebare3()
+			{
+				document.getElementById("intrebare").innerHTML = "Care este bugetul pe care îl ai planificat?";
+				let element=document.getElementById("buget");
+				element.style.display="";
+				
+				effect();
+			}
+			setTimeout(urmintrebare1,5000);
+			
+			const letters = "abcdefghijklmnopqrstuvwxyz";
+			
+			function effect()
+			{
+				
+				const element= document.querySelector("h2");
+				element.dataset.value=element.innerText; 
+				{
+					let iterations =0;
+					const interval= setInterval(()=>{
+						element.innerText =element.innerText.split("")
+						.map((letter,index)=>{
+						
+							if(index < iterations)
+							{
+								return element.dataset.value[index];
+							}
+							return letters[Math.floor(Math.random()*26)]
+						})
+						.join("");
+					
+						if(iterations >= element.dataset.value.length) 
+						{
+							clearInterval(interval);
+						}
+						iterations += 1;
+						
+					},30);
+				}
+			}
+			
+			function hideAndShowSelectBox() 
+			{
+				var selectedValue = document.getElementById("tip").value;
+				if(selectedValue != "") 
+				{
+					document.getElementById("tip").style.display = "none";
+					urmintrebare2();
+				}
+				if(document.getElementById("interes").value != "") 
+				{
+					document.getElementById("interes").style.display = "none";
+					urmintrebare3();
+				}
+				if(document.getElementById("buget").value != "") 
+				{
+					document.getElementById("buget").style.display = "none";
+					document.getElementById("intrebare").style.display="none";
+					AfisareRezultat();
+				}
+			}
+			
+			function pozeRezultat()
+			{
+			
+			const track= document.getElementById("image-track");
+			
+			window.onmouseup = () =>
+			{
+				track.dataset.mouseDownAt = "0";
+				track.dataset.prevPercentage = track.dataset.percentage;
+			}
+			
+			window.onmousedown = e =>
+			{
+				track.dataset.mouseDownAt= e.clientX;
+			}
+			
+			window.onmousemove = e =>
+			{
+				if(track.dataset.mouseDownAt === "0") return;
+				
+				const mouseDelta= parseFloat(track.dataset.mouseDownAt) -e.clientX,
+						maxDelta= window.innerWidth /2;
+						
+				const percentage =(mouseDelta/ maxDelta) * -100,
+					nextPercentageUnconstrained =parseFloat(track.dataset.prevPercentage)+ percentage;
+					nextPercentage= Math.max(Math.min(nextPercentageUnconstrained, 0),-100);
+				
+				for(const image of track.getElementsByClassName("image"))
+				{
+					image.animate(
+						{objectPosition: `${100 + nextPercentage}% center`},
+						{ duration: 1200, fill: "forwards" }
+					);
+				}
+				
+				track.dataset.percentage = nextPercentage;
+				
+				track.animate
+				(
+					{transform: `translate(${nextPercentage}%, -50%)`},
+					{ duration: 1200, fill: "forwards" }
+				);
+	
+			}
+			/*
+				window.onmousedown = e => handleOnDown(e);
+
+				window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+				window.onmouseup = e => handleOnUp(e);
+
+				window.ontouchend = e => handleOnUp(e.touches[0]);
+
+				window.onmousemove = e => handleOnMove(e);
+
+				window.ontouchmove = e => handleOnMove(e.touches[0]);
+			*/
+			}				
+			
+		</script>
+	</body>
+</html>

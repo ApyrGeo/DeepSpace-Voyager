@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>DeepSpace Voyager</title>
+	</head>
+	
+	<style>
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-size: border-box;
+			font-family: sans-serif;
+			scroll-behavior: smooth;
+		}
+		body
+		{
+			min-height: 100vh;
+			
+			background:  linear-gradient(#2b1055,#7597de);
+		}
+		header
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 10000;
+		}
+		header .logo
+		{
+			color: #fff;
+			font-weight: 700;
+			text-decoration: none;
+			font-size: 2em;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		header ul
+		{
+			padding-right:50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		header ul li
+		{
+			List-style: none;
+			margin-left: 20px;
+		}
+		header ul li a
+		{
+			text-decoration: none;
+			padding: 6px 15px;
+			color: #fff;
+			border-radius: 20px;
+		}
+		header ul li a:hover,
+		header ul li a.active
+		{
+			background: #fff;
+			color: #2d1055;
+		}	
+		section
+		{
+			position: relative;
+			width: 100%;
+			height: 150vh;
+			display: flex;
+			
+			background: linear-gradient(to top, #1c0522, transparent);
+			z-index=1000;
+			overflow: hidden;
+		}
+		section img#stars
+		{	
+			position: relative;
+			width: 100%;
+			height: 150vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.sec
+		{
+			
+			text-align: justify;
+			position: absolute;
+			padding: 100px 200px 300px 200px;
+			//background: #1c0522;
+		}
+		.sec p
+		{	
+			font-size: 1.5em;
+			color: #fff;
+		}
+		
+	</style>
+	<body>
+		<header>
+			<a href="#" class="logo" onclick="window.location.replace('index.html')">DeepSpace Voyager</a>
+			<ul>
+				<li><a href="#" onclick="window.location.replace('index.html')">Acasă</a></li>
+				<li><a href="#" onclick="window.location.replace('Descopera.html')">Descoperă</a></li>
+				<li><a href="#" class="active">Despre</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</header>
+		<section>
+			<img src="stars.png" id="stars">
+			
+			<div class="sec" id="sec">
+				<br><br>
+				<br><br>
+				<p>
+					Misiunea noastră este să facem spațiul accesibil pentru toți și să inspirăm oamenii să exploreze necunoscutul. Suntem o echipă dedicată care creează experiențe spațiale unice și inovatoare, adaptate nevoilor și preferințelor fiecărui client.
+				<br><br>
+					Compania noastră a fost fondată din pasiunea pentru explorare și dorința de a face spațiul o destinație accesibilă pentru toți. Am început ca o mică echipă de entuziaști ai spațiului și am evoluat într-o companie care oferă excursii spațiale personalizate pentru clienții noștri.
+				<br><br>
+					Am realizat astfel că nu era nevoie să fii un astronaut experimentat pentru a experimenta frumusețea și misterul spațiului. Astfel, am început să oferim excursii spațiale pentru amatori care doresc să trăiască această experiență.
+				<br><br>
+					Noi servim persoanele care doresc să experimenteze senzații unice și să trăiască o experiență de neuitat. Indiferent dacă doriți să vedeți Pământul din spațiu, să plutiți în gravitație zero sau să explorați alte planete, suntem aici pentru a vă ajuta să realizați acest lucru.
+				<br><br>
+					Noi oferim excursii spațiale personalizate pentru clienții noștri. Acestea includ transportul cu naveta spațială, cazarea și masa în stația spațială, activități spațiale personalizate și echipament spațial de înaltă performanță.
+				<br><br>
+					Am avut ocazia de a servi oameni din diferite domenii, inclusiv oameni de afaceri, oameni de știință, sportivi de performanță și celebrități.
+				<br><br>
+					Valorile noastre sunt centrate pe siguranță, inovație, adaptabilitate și respect pentru mediul înconjurător. Ne angajăm să oferim clienților noștri cele mai bune experiențe spațiale posibile, într-un mod sigur și sustenabil.
+				<br><br>
+					Am lucrat din greu pentru a dezvolta o platformă ușor de utilizat, care să permită vizitatorilor noștri să-și proiecteze propria expediție spațială. În plus, echipa noastră este mereu pregătită să vă ajute cu orice întrebări sau nelămuriri aveți.
+				<br><br>
+					În spatele acestui site, există o echipă de experți în tehnologie și călătorii spațiale, care utilizează cele mai recente tehnologii pentru a crea expediții spațiale personalizate, bazate pe preferințele și dorințele dumneavoastră.
+				<br><br>
+					Pasiunea noastră pentru spațiul cosmic și misiunea noastră de a oferi experiențe personalizate și memorabile ne motivează în permanență să ne dezvoltăm și să îmbunătățim serviciile pe care le oferim. Vrem să fim liderii în domeniul călătoriilor spațiale personalizate și să facem ca explorarea spațiului cosmic să fie accesibilă pentru toată lumea.
+				<br><br>
+					Mulțumim pentru interesul dumneavoastră în site-ul nostru și sperăm să vă ajutăm să vă transformați visul de a călători în spațiul cosmic în realitate.
+				</p>
+		
+			</div>
+		</section>
+		
+		
+	</body>
+</html>
