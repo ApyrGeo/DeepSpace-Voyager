@@ -265,11 +265,7 @@
 				if(x==0)	buget="Mare";
 				if(x==1)	buget="Mic";
 			}
-			if(tip==="Calatorii intergalactice")
-			{
-				document.getElementById("mare").innerText="Peste 10.000 M$";
-				document.getElementById("mic").innerText="Sub 10.000 M$";
-			}
+			
 			if(buget==="Mare")
 			{
 				if(tip==="Turism pe alte planete")
@@ -1181,6 +1177,7 @@
 			}
 			function urmintrebare2()
 			{
+				
 				document.getElementById("intrebare").innerHTML = "Care este scopul călătoriei?";
 				let element=document.getElementById("interes");
 				element.style.display="";
@@ -1194,6 +1191,7 @@
 				element.style.display="";
 				
 				effect();
+				
 			}
 			setTimeout(urmintrebare1,5000);
 			
@@ -1234,12 +1232,19 @@
 				if(selectedValue != "") 
 				{
 					document.getElementById("tip").style.display = "none";
-					urmintrebare2();
+					urmintrebare2();	
 				}
 				if(document.getElementById("interes").value != "") 
 				{
+					
 					document.getElementById("interes").style.display = "none";
 					urmintrebare3();
+					if(document.getElementById("tip").value==="Calatorii intergalactice")
+					{
+						document.getElementById("mare").innerText="Peste 10.000 M$";
+						document.getElementById("mic").innerText="Sub 10.000 M$";
+					}
+					
 				}
 				if(document.getElementById("buget").value != "") 
 				{
