@@ -17,6 +17,7 @@
 			min-height: 120vh;
 			overflow-x:hidden;
 			background:  linear-gradient(#2b1055,#7597de);
+			background-attachement: fixed;
 		}
 		header
 		{
@@ -72,8 +73,8 @@
 			display: flex;
 			
 			background: linear-gradient(to top, #1c0522, transparent);
-			z-index=1000;
-			overflow: hidden;
+			z-index: 1000;
+			
 		}
 		section img#stars
 		{	
@@ -158,6 +159,19 @@
 			{
 				document.body.style.width="110vw";
 			}
+			
+			 function makeSecBigEnough () {
+              const element = document.getElementById("sec");
+              //const pageBottom = element.getBoundingClientRect().bottom;
+              const pageBottom = element.clientHeight;
+
+              let section = document.getElementsByTagName("section")[0];
+              const bottom = section.clientHeight;
+
+              section.style.height = Math.max(pageBottom, bottom);
+			}
+
+			makeSecBigEnough();
 		</script>
 		
 	</body>
