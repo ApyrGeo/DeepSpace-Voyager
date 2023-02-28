@@ -683,3 +683,4 @@ Aceasta pune la dispoziție Github Pages, care fac posibilă accesarea proiectul
 Totodată toate persoanele pot accesa documentele, imaginile sau codurile sursă pentru a le vizualiza.
 
 ![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/11.png)
+
