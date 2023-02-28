@@ -1,4 +1,4 @@
-# Proiect Prosoft: *DeepSpace Voyager*
+# Documentație Proiect Prosoft: *DeepSpace Voyager*
 ![](./poze/1.png)
 # Capitole:
 
