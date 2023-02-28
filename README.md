@@ -4,7 +4,7 @@ Propunător și dezvoltator proiect: Secure George-Sebastian
 
 Unitatea de învățământ: Colegiul Național de Informatică, Piatra-Neamț
 
-![](./poze/1.png)
+![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/1.png)
 
 # Capitole:
 
@@ -34,7 +34,7 @@ Totodată, oferă o scurtă descriere a destinației/ călătoriei alese și o s
 
 ### 1. Pagina acasă (index.html)
 
-![](./poze/2.gif)
+![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/2.gif)
 
 #### Design folosind cod în CSS:
 
@@ -135,7 +135,7 @@ https://github.com/ApyrGeo/DeepSpace-Voyager/blob/92e7b3c52241cf1a1de6783ad5380d
 ### 2. Pagina de generare a călătoriei (Descopera.html)
 
 
-![](./poze/3.gif)
+![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/3.gif)
 
 
 #### Elemente noi de CSS:
@@ -557,7 +557,7 @@ Se poate observa la final implementarea efectului pe alte dispozitive(cu touchsc
 
 ### 3. Pagina de descriere și contact (Despre.html, Contact.html)
 
-![](./poze/4.gif)
+![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/4.gif)
 
 #### Elemente de CSS
 
@@ -682,4 +682,4 @@ Aceasta pune la dispoziție Github Pages, care fac posibilă accesarea proiectul
 
 Totodată toate persoanele pot accesa documentele, imaginile sau codurile sursă pentru a le vizualiza.
 
-![](poze/11.png)
+![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/11.png)
