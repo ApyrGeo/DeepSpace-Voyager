@@ -6,8 +6,6 @@ Unitatea de învățământ: Colegiul Național de Informatică, Piatra-Neamț
 
 ![](https://github.com/ApyrGeo/DeepSpace-Voyager/raw/main/poze/1.png)
 
-# Capitole:
-
 ## I. Descriere
 
 DeepSpace Voyager este o platformă web care urmărește să ofere un alt tip de experiențe oricărui pasionat de călătorii și se adresează unui număr cât mai mare de pasionați de domeniu.
