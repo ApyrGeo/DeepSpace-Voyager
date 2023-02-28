@@ -76,7 +76,9 @@ https://github.com/ApyrGeo/DeepSpace-Voyager/blob/92e7b3c52241cf1a1de6783ad5380d
 ```
 
 #### Funcții:
+
 - Mișcarea obiectelor pe fundal:
+
 ```js
 			let stars = document.getElementById('stars');
 			let moon = document.getElementById('moon');
@@ -98,7 +100,9 @@ https://github.com/ApyrGeo/DeepSpace-Voyager/blob/92e7b3c52241cf1a1de6783ad5380d
 				header.style.top= value * 0.5 + 'px';
 			})
 ```
+
 - Formatare aspect pentru telefoane:
+
 ```js
   			function detectMob() {
 				const toMatch = [
@@ -121,9 +125,12 @@ https://github.com/ApyrGeo/DeepSpace-Voyager/blob/92e7b3c52241cf1a1de6783ad5380d
 				document.body.style.width="110vw";
 			}
 ```
+
 ### 2. Pagina de generare a călătoriei (Descopera.html)
 
+
 ![](./poze/3.gif)
+
 
 #### Elemente noi de CSS:
 
