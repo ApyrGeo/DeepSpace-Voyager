@@ -1,6 +1,6 @@
 # Documentație Proiect Prosoft: *DeepSpace Voyager*
 
-Propunător proiect: Secure George-Sebastian
+Propunător și dezvoltator proiect: Secure George-Sebastian
 
 Unitatea de învățământ: Colegiul Național de Informatică, Piatra-Neamț
 
