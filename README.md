@@ -1,10 +1,16 @@
 # Documentație Proiect Prosoft: *DeepSpace Voyager*
+
+Propunător proiect: Secure George-Sebastian
+
+Unitatea de învățământ: Colegiul Național de Informatică, Piatra-Neamț
+
 ![](./poze/1.png)
+
 # Capitole:
 
 ## I. Descriere
 
-DeepSpace Voyager este o platformă web care urmărește să ofere un alt tip de experiențe oricărui pasionat de călătorii.
+DeepSpace Voyager este o platformă web care urmărește să ofere un alt tip de experiențe oricărui pasionat de călătorii și se adresează unui număr cât mai mare de pasionați de domeniu.
 Pornind de la tema „*Orizonturi noi*”, site-ul dorește să planifice călătorii spațiale, în funcție de preferințele utilizatorului.
 
 Site-ul prelucrează astfel datele introduse de client, iar un algoritm alege dintr-o gamă largă de destinații pe cea mai apropiată pentru acesta.
